@@ -1,6 +1,6 @@
 # Contributing
 
-Thank you for helping improve Blokmira.
+Thank you for helping improve Blokmira. Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Ground rules
 - **Verify before you add.** Every new fact needs a tag: `[code]` (installed plugin source, with file and line), `[runtime]` (seen on a running site), `[docs]` (official documentation, with the page slug) or `[unverified]`.
