@@ -47,11 +47,27 @@ Global Customizer changes are planned as a validated change file. You can dry-ru
 
 ## Installation
 
+### One command (npx)
+
+Install into the current project with the open [skills CLI](https://github.com/vercel-labs/skills). It needs Node.js.
+
+```bash
+npx skills add tutsvela/blokmira
+```
+
+Add `-g` to install it for every project, or `-a claude-code` to target one agent:
+
+```bash
+npx skills add tutsvela/blokmira -g -a claude-code
+```
+
+### Other ways
+
 | Where you use it | How to install |
 |---|---|
 | **Claude Code** | `/plugin marketplace add tutsvela/blokmira`, then `/plugin install blokmira@blokmira` |
 | **Claude.ai or Claude Desktop** | Download `blokmira.skill` from [Releases](https://github.com/tutsvela/blokmira/releases/latest), then add it under Settings › Capabilities › Skills |
-| **Other agents** (any agent that reads Agent Skills) | Copy `skills/blokmira/` into the agent's skills folder |
+| **Manual** (any agent that reads Agent Skills) | `git clone https://github.com/tutsvela/blokmira.git`, then copy `skills/blokmira/` into the agent's skills folder |
 
 The full guide covers requirements, checks, updates and troubleshooting: **[docs/installation.md](docs/installation.md)**.
 

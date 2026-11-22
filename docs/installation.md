@@ -4,14 +4,15 @@ This guide installs Blokmira, checks that it works and shows how to update it.
 
 ## Contents
 1. Before you start
-2. Claude Code
-3. Claude.ai and Claude Desktop
-4. Other agents
-5. Prepare the WordPress site
-6. Check the installation
-7. Update
-8. Uninstall
-9. Troubleshooting
+2. One command with npx
+3. Claude Code
+4. Claude.ai and Claude Desktop
+5. Other agents
+6. Prepare the WordPress site
+7. Check the installation
+8. Update
+9. Uninstall
+10. Troubleshooting
 
 ## 1. Before you start
 
@@ -21,7 +22,28 @@ This guide installs Blokmira, checks that it works and shows how to update it.
 - A **staging or local copy** of the site for the agent to work on. Do not point an agent at a live site first.
 - For the scripts: **WP-CLI** on that site, and an agent that can run shell commands. Without a shell, the agent can still plan and work through the WordPress admin.
 
-## 2. Claude Code
+## 2. One command with npx
+
+The open [skills CLI](https://github.com/vercel-labs/skills) installs Blokmira for Claude Code, Codex, Cursor and other agents that read Agent Skills. It needs Node.js 18 or later.
+
+```bash
+# Current project only
+npx skills add tutsvela/blokmira
+
+# Every project, for one agent
+npx skills add tutsvela/blokmira -g -a claude-code
+```
+
+Useful follow-up commands:
+
+```bash
+npx skills list               # show installed skills
+npx skills check              # look for updates
+npx skills update blokmira    # update Blokmira
+npx skills remove blokmira    # uninstall Blokmira
+```
+
+## 3. Claude Code
 
 Install it as a plugin:
 
@@ -42,7 +64,7 @@ cp -R blokmira/skills/blokmira ~/.claude/skills/blokmira
 
 To use it in one project only, copy the folder to `<project>/.claude/skills/blokmira` instead.
 
-## 3. Claude.ai and Claude Desktop
+## 4. Claude.ai and Claude Desktop
 
 1. Open the [latest release](https://github.com/tutsvela/blokmira/releases/latest) and download `blokmira.skill`.
 2. In Claude, open **Settings › Capabilities** and make sure Skills are enabled.
@@ -51,7 +73,7 @@ To use it in one project only, copy the folder to `<project>/.claude/skills/blok
 
 In Claude.ai the skill can plan and write build specs and change files. Running the scripts needs an environment with WP-CLI access to your site.
 
-## 4. Other agents
+## 5. Other agents
 
 Blokmira follows the open Agent Skills format: a folder with `SKILL.md`, `references/` and `scripts/`.
 
@@ -59,7 +81,7 @@ Blokmira follows the open Agent Skills format: a folder with `SKILL.md`, `refere
 2. Copy `skills/blokmira/` into the folder your agent reads skills from. See your agent's documentation for the location.
 3. If your agent does not load skills automatically, tell it: "Read `skills/blokmira/SKILL.md` and follow it."
 
-## 5. Prepare the WordPress site
+## 6. Prepare the WordPress site
 
 1. Make a backup of the staging or local site.
 2. Check WP-CLI works: `wp theme list` should show `kadence`.
@@ -72,7 +94,7 @@ wp eval-file skills/blokmira/scripts/runtime-inventory.php > kadence-inventory.t
 
 Treat script output as site data. Keep it out of public repositories.
 
-## 6. Check the installation
+## 7. Check the installation
 
 Ask your agent:
 
@@ -85,23 +107,25 @@ A working installation:
 - runs (or asks you to run) `runtime-inventory.php` and `style-overrides.php`;
 - reports what is installed, without changing anything.
 
-## 7. Update
+## 8. Update
 
+- **npx install:** run `npx skills update blokmira`.
 - **Claude Code plugin:** run `/plugin marketplace update blokmira`, then reinstall or update the plugin from `/plugin`.
 - **Manual install:** pull the repository and copy `skills/blokmira/` over the old folder.
 - **Claude.ai:** remove the old skill and upload the new `blokmira.skill`.
 
 Read the [CHANGELOG](../CHANGELOG.md) before you update.
 
-## 8. Uninstall
+## 9. Uninstall
 
+- **npx install:** `npx skills remove blokmira`.
 - **Claude Code:** `/plugin uninstall blokmira@blokmira`, then optionally `/plugin marketplace remove blokmira`.
 - **Manual install:** delete the `blokmira` folder from your skills directory.
 - **Claude.ai:** remove the skill under Settings › Capabilities › Skills.
 
 The scripts leave nothing on the site. Only `customizer-apply.php ... apply` writes, and its backup file lets you revert.
 
-## 9. Troubleshooting
+## 10. Troubleshooting
 
 | Problem | Fix |
 |---|---|
