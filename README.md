@@ -6,12 +6,13 @@
 
 **Native-first WordPress site building for AI agents**
 
-[![Version](https://img.shields.io/badge/version-0.1.0-F05A35?style=flat-square)](CHANGELOG.md)
+[![Release](https://img.shields.io/github/v/release/tutsvela/blokmira?style=flat-square&color=F05A35&label=release)](https://github.com/tutsvela/blokmira/releases/latest)
 [![License](https://img.shields.io/badge/license-GPL--2.0--or--later-333333?style=flat-square)](LICENSE)
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-F05A35?style=flat-square)](skills/blokmira/SKILL.md)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-plugin-333333?style=flat-square)](.claude-plugin/plugin.json)
 [![Kadence](https://img.shields.io/badge/works_with-Kadence-F05A35?style=flat-square)](https://wordpress.org/themes/kadence/)
 [![MCP](https://img.shields.io/badge/MCP-ready_contract-333333?style=flat-square)](docs/mcp-roadmap.md)
+[![Validate](https://img.shields.io/github/actions/workflow/status/tutsvela/blokmira/validate.yml?branch=main&style=flat-square&label=validate&color=333333)](https://github.com/tutsvela/blokmira/actions/workflows/validate.yml)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-F05A35?style=flat-square)](CONTRIBUTING.md)
 
 [Installation](docs/installation.md) · [Quick start](#quick-start) · [Sample prompts](prompts/) · [Scripts](#scripts) · [MCP roadmap](docs/mcp-roadmap.md) · [Changelog](CHANGELOG.md)
