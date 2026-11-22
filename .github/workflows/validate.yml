@@ -1,0 +1,23 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+      - name: Lint scripts
+        run: for f in skills/blokmira/scripts/*.php; do php -l "$f"; done
+      - name: Check plugin manifests are valid JSON
+        run: |
+          python3 -m json.tool .claude-plugin/plugin.json > /dev/null
+          python3 -m json.tool .claude-plugin/marketplace.json > /dev/null
+      - name: Check SKILL.md front matter
+        run: |
+          head -3 skills/blokmira/SKILL.md | grep -q '^name: blokmira$'

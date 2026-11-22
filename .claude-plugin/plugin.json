@@ -1,0 +1,13 @@
+{
+  "name": "blokmira",
+  "version": "0.1.0",
+  "description": "Blokmira for Kadence: native-first WordPress site building with the Kadence theme, Customizer and blocks, with validated Customizer automation and an MCP-ready operation contract.",
+  "author": {
+    "name": "Salman Sarwar",
+    "url": "https://github.com/tutsvela"
+  },
+  "homepage": "https://github.com/tutsvela/blokmira",
+  "repository": "https://github.com/tutsvela/blokmira",
+  "license": "GPL-2.0-or-later",
+  "keywords": ["wordpress", "kadence", "gutenberg", "customizer", "page-builder", "agent-skill", "mcp"]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "blokmira",
+  "owner": {
+    "name": "Salman Sarwar",
+    "url": "https://github.com/tutsvela"
+  },
+  "metadata": {
+    "description": "Blokmira plugins for building WordPress sites natively with Kadence.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "blokmira",
+      "source": "./",
+      "description": "Native-first Kadence site building: design to blocks, Customizer planning with validated apply and revert, MCP-ready contract.",
+      "version": "0.1.0",
+      "author": { "name": "Salman Sarwar" },
+      "license": "GPL-2.0-or-later",
+      "keywords": ["wordpress", "kadence", "customizer", "gutenberg"]
+    }
+  ]
+}

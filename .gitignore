@@ -1,0 +1,11 @@
+.DS_Store
+*.log
+# Site output from the scripts (site data, never commit)
+kadence-inventory*.txt
+*customizer-schema*.json
+kadence-block-schema*.json
+backup*.json
+changes*.json
+# Local working notes and build output
+.dev/
+dist/
